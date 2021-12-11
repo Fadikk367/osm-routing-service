@@ -1,14 +1,7 @@
-import express from 'express';
-import cors from 'cors';
+import Server from './core/Server';
 
 const PORT = process.env.PORT || 8000;
 
-const app = express();
+const server = new Server([], PORT);
 
-app.use(cors());
-
-app.get("/",(req, res) =>{
-  res.json({message: 'Hello there'});
-});
-
-app.listen(PORT, () => console.log(`Server is listening on port: ${PORT}`));
+server.listen();
